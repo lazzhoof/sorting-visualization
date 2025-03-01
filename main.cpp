@@ -55,11 +55,6 @@ bool bubbleSortStep()
 
 int main()
 {
-	//const int koef = HEIGHT / NUM_BARS;
-
-	//std::vector initialVector = generateVector(NUM_BARS);
-	//values = generatePermutation(initialVector, koef);
-
 	sf::RenderWindow window(sf::VideoMode(sf::Vector2u{ WIDTH, HEIGHT }), "Sorting Visualisation");
 
 	std::srand(static_cast<unsigned>(std::time(0)));
