@@ -4,6 +4,8 @@
 #include <thread>
 #include <iostream>
 #include "generate.hpp"
+#include "sorts.hpp"
+#include <Windows.h>
 
 const int WIDTH = 1280;
 const int HEIGHT = 720;
@@ -31,34 +33,13 @@ void drawBars(sf::RenderWindow& window)
 	window.display();
 }
 
-bool bubbleSortStep()
-{
-	if (i < NUM_BARS - 1)
-	{
-		if (j < NUM_BARS - i - 1)
-		{
-			if (values[j] > values[j + 1])
-			{
-				std::swap(values[j], values[j + 1]);
-			}
-			j++;
-		}
-		else
-		{
-			j = 0;
-			i++;
-		}
-		return true;
-	}
-	return false;
-}
-
 int main()
 {
+	ShowWindow(GetConsoleWindow(), SW_HIDE);
+
 	sf::RenderWindow window(sf::VideoMode(sf::Vector2u{ WIDTH, HEIGHT }), "Sorting Visualisation");
 
 	std::srand(static_cast<unsigned>(std::time(0)));
-
 
 	bool sorting = true;
 
@@ -74,7 +55,7 @@ int main()
 
 		if (sorting)
 		{
-			sorting = bubbleSortStep();
+			sorting = bubbleSortStep(values, &i, &j, NUM_BARS);
 			drawBars(window);
 			std::this_thread::sleep_for(std::chrono::milliseconds(SORT_DELAY));
 		}
