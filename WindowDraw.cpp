@@ -15,3 +15,5 @@ void drawBars(sf::RenderWindow& window, const int WIDTH, const int HEIGHT, const
 
 	window.display();
 }
+
+// TODO:need to colour bars which are compared

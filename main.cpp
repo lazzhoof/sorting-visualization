@@ -50,3 +50,7 @@ int main()
 
 	return 0;
 }
+
+//TODO:need to add sound after step completed
+//TODO:custom data fo sorting
+//TODO:need to add GUI

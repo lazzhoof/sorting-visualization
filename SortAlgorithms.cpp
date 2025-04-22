@@ -23,6 +23,8 @@ bool BubbleSort::step() {
 	}
 	return sorted;
 }
+// TODO:how to send the state of algorithm when to values are compared?
+// TODO:how to store sorting algorithms?
 
 bool BubbleSort::isSorted() const {
 	return sorted;
